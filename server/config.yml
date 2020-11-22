@@ -1,0 +1,7 @@
+system:
+  name: gungnir
+  listen:
+    port: 9960
+
+database:
+  source: root:password@tcp(localhost:3309)/gungnir?charset=utf8

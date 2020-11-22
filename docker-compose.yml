@@ -1,0 +1,27 @@
+version: "3"
+services:
+  db:
+    container_name: gungnir_db
+    image: mysql:8
+    ports:
+      - 3309:3306
+    networks:
+      - gungnir
+    volumes:
+      - /Users/logan/Data/gungnir_db:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+
+#  api:
+#    container_name: gungnir_api
+#    image: formula/api:latest
+#    networks:
+#      - formula
+#    restart: always
+#    volumes:
+#      - /Users/logan/Data/images:/data/engine-image
+    
+networks:
+  gungnir:
+    driver: bridge
